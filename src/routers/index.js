@@ -8,10 +8,18 @@ import { components } from './map'
 //   loading: Loading
 // })
 
-console.log(components)
 const ContentRouter = () => {
   return (
     <>
+      {components.map(main => {
+        return (
+          <Route
+            path={main.path}
+            key={main.path}
+            component={main.component}
+          ></Route>
+        )
+      })}
       {/* <Route path="/index/uploadImg" component={uploadImgComponent}></Route> */}
     </>
   )

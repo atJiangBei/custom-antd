@@ -25,7 +25,8 @@ module.exports = {
   resolve: {
     alias: {
       '@': resolve('../src'),
-      components: resolve('../components')
+      components: resolve('../components'),
+      lib: resolve('../lib')
     },
     extensions: ['.js', 'jsx']
   },

@@ -16,12 +16,12 @@ module.exports = {
   devtool: 'none',
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, '../components')
+      components: path.resolve(__dirname, '../components')
     },
     extensions: ['.js', 'jsx']
   },
   resolveLoader: {
-    modules: [path.resolve(__dirname, 'node_modules')]
+    modules: [path.resolve(__dirname, './../', 'node_modules')]
   },
   mode: 'production',
   performance: {
@@ -29,6 +29,7 @@ module.exports = {
   },
   externals: {
     ...externalsComponents,
+    'antd/es/button': 'antd/es/button',
     react: 'react'
   },
   module: {

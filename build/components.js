@@ -31,7 +31,7 @@ componentNames.forEach(
  * gaojingwei 2020/01/15
  * 处理组件按需加载存在的重复引用问题
  */
-const pname = '@components' //别名
+const pname = 'components' //别名
 const externalsExcludes = ['index.js', 'index.less', 'style']
 
 const externalsComponents = {}
@@ -42,8 +42,8 @@ externalsComponentNames.forEach(
   name => (externalsComponents[`${pname}/${name}`] = `./../${name}`)
 )
 const externalsExcludesDir = ['utils']
-//处理组件文件夹内部互相引用js打包问题，就是内部引用不在打包，运行时引入
-//
+//处理组件文件夹内部互相引用公共js打包问题，就是内部引用不在打包，运行时引入
+
 for (let i = 0; i < externalsExcludesDir.length; i++) {
   const filesName = externalsExcludesDir[i]
   fs.readdirSync(resolve(`../${fileFolder}/${filesName}`)).forEach(
@@ -53,6 +53,8 @@ for (let i = 0; i < externalsExcludesDir.length; i++) {
       ] = `./../${filesName}/${name}`)
   )
 }
+
+//components.root = path.join(__dirname, `./../${fileFolder}/index.js`)
 
 console.log({
   components,

@@ -2,14 +2,14 @@ import React from 'react'
 import './layout.less'
 import logo from '@/assets/imgs/logo.svg'
 import ContentRouter from '@/routers'
-
+import { sliderList } from '@/routers/map'
 import Layout from 'antd/es/layout'
 import Menu from 'antd/es/menu'
 import Icon from 'antd/es/icon'
 import 'antd/es/layout/style'
 import 'antd/es/menu/style'
 import 'antd/es/icon/style'
-import { sliderList } from '@/routers/map'
+
 const { SubMenu } = Menu
 const { Header, Sider, Content } = Layout
 
@@ -24,8 +24,7 @@ class LayoutContainer extends React.Component {
     })
   }
   goTo = path => {
-    //console.log(this.props)
-    //this.props.history.push(path)
+    this.props.history.push(path)
   }
   render() {
     const { collapsed } = this.state

@@ -6,9 +6,9 @@ const signale = require('signale')
 
 const { Signale } = signale
 const tasks = [
-  'node build/build-start.js',
+  'node build/build.start.js',
   'webpack --config build/webpack.build.lib.js',
-  'node build/build-style.js'
+  'node build/build.style.js'
 ]
 
 tasks.forEach(task => {
