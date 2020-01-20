@@ -9,7 +9,6 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const merge = require('webpack-merge')
 const config = require('../config')
-const Artifact = require('./../plugins/Artifact')
 module.exports = merge(baseWebpackConfig, {
   devServer: {
     port: config.port,
@@ -20,14 +19,11 @@ module.exports = merge(baseWebpackConfig, {
     proxy: config.proxy
   },
   plugins: [
-    //new Artifact()
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {
-        messages: [
-          `You application is running here http://127.0.0.1:${config.port}`
-        ],
+        messages: [createStrImg()],
         notes: [
-          'Some additionnal notes to be displayed unpon successful compilation'
+          `You application is running here http://127.0.0.1:${config.port}`
         ]
       },
       onErrors: function(severity, errors) {
@@ -41,3 +37,28 @@ module.exports = merge(baseWebpackConfig, {
     })
   ]
 })
+
+function createStrImg() {
+  return [
+    '                                                                  ',
+    '       k         k     y               y      zzzzzzzzzzzzzzzzzz',
+    '       k        k       y             y                       z',
+    '       k       k         y           y                       z',
+    '       k      k           y         y                       z',
+    '       k     k             y       y                       z',
+    '       k    k               y     y                       z',
+    '       k   k                 y   y                       z',
+    '       k  k                   y y                       z',
+    '       k k                     y                       z',
+    '       kk                      y                      z',
+    '       k k                     y                     z',
+    '       k  k                    y                    z',
+    '       k   k                   y                   z',
+    '       k    k                  y                  z',
+    '       k     k                 y                 z',
+    '       k      k                y                z',
+    '       k       k               y               z',
+    '       k        k              y               zzzzzzzzzzzzzzzzz',
+    '                                                                   '
+  ].join('\n')
+}

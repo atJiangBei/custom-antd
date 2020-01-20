@@ -1,4 +1,4 @@
 module.exports = {
-    port: '8090',
-    proxy: {}
-  }
+  port: '9090',
+  proxy: {}
+}
