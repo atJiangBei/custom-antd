@@ -56,11 +56,23 @@ for (let i = 0; i < externalsExcludesDir.length; i++) {
 
 //components.root = path.join(__dirname, `./../${fileFolder}/index.js`)
 
+const antdExternalsComponents = {}
+// 需要排除antd内部组件的路径，以免打包时引入
+// 为webpack收集此路径
+const antdEsComponentsFolderName = fs.readdirSync(
+  resolve(`../node_modules/antd/es`)
+)
+antdEsComponentsFolderName.forEach(name => {
+  const url = `antd/es/${name}`
+  antdExternalsComponents[url] = url
+})
 console.log({
   components,
-  externalsComponents
+  externalsComponents,
+  antdExternalsComponents
 })
 module.exports = {
   components,
-  externalsComponents
+  externalsComponents,
+  antdExternalsComponents
 }

@@ -3,7 +3,11 @@
  */
 var path = require('path')
 
-const { externalsComponents, components } = require('./components')
+const {
+  externalsComponents,
+  components,
+  antdExternalsComponents
+} = require('./components')
 
 module.exports = {
   entry: components,
@@ -28,8 +32,9 @@ module.exports = {
     hints: false
   },
   externals: {
-    ...externalsComponents,
-    'antd/es/button': 'antd/es/button',
+    ...externalsComponents, //排除components内部组件互相引用的问题
+    ...antdExternalsComponents, //排除components内部组件引入antd组件
+    //'antd/es/button': 'antd/es/button',
     react: 'react'
   },
   module: {

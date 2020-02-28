@@ -60,6 +60,21 @@ context.keys().forEach(path => {
   })
 })
 
-console.log(sliderList)
+const str = [
+  '                                                      ',
+  '       k    k         y         y          zzzzzzzzz',
+  '       k   k           y       y                   z',
+  '       k  k             y     y                   z',
+  '       k k               y   y                   z',
+  '       kk                 y y                   z',
+  '       k k                 y                   z',
+  '       k  k                y                  z',
+  '       k   k               y                 z',
+  '       k    k              y                zzzzzzzzz',
+  '                                                      ',
+  '                Antd@3.26                             '
+].join('\n')
+
+console.log(`%c ${str}`, 'color:#1590FF')
 
 export { components, sliderList }

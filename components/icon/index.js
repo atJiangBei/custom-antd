@@ -1,3 +1,3 @@
-import Button from './component'
+import Icon from './component'
 
-export default Button
+export default Icon

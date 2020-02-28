@@ -19,3 +19,21 @@ body,
   height: 100%;
   overflow: auto;
 }
+.inline-block {
+  display: inline-block;
+}
+.padding-all {
+  padding: 10px;
+}
+.margin-t1 {
+  margin-top: 10px;
+}
+.margin-b1 {
+  margin-top: 10px;
+}
+.margin-l1 {
+  margin-top: 10px;
+}
+.margin-r1 {
+  margin-top: 10px;
+}

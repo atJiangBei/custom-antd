@@ -1,12 +1,35 @@
-import React from 'react'
-import Icon from 'lib/icon'
-import 'lib/icon/style'
+import React, { Fragment } from 'react'
+import Icon from 'components/icon'
+import 'components/icon/style/less'
 import './index.less'
 
+const iconTypes = [
+  'down',
+  'up',
+  'left',
+  'right',
+  'scan',
+  'search',
+  'tag',
+  'save',
+  'skin',
+  'usb',
+  'block',
+  'border'
+]
 const DemoIcon = () => {
   return (
-    <div className="demo-icon">
-      <Icon></Icon>
+    <div>
+      {iconTypes.map(type => {
+        return (
+          <div
+            className="margin-b1 margin-r1 inline-block padding-all"
+            key={type}
+          >
+            <Icon type={type} style={{ fontSize: '24px' }}></Icon>
+          </div>
+        )
+      })}
     </div>
   )
 }

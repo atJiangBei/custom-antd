@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from 'lib/button'
-import 'lib/button/style'
+import Button from 'components/button'
+import 'components/button/style/less'
 import './index.less'
 
 const DemoButton = () => {
