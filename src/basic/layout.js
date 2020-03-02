@@ -5,7 +5,7 @@ import ContentRouter from '@/routers'
 import { sliderList } from '@/routers/map'
 import Layout from 'antd/es/layout'
 import Menu from 'antd/es/menu'
-import Icon from 'antd/es/icon'
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import 'antd/es/layout/style'
 import 'antd/es/menu/style'
 import 'antd/es/icon/style'
@@ -48,7 +48,7 @@ class LayoutContainer extends React.Component {
                     key={subm.title}
                     title={
                       <span>
-                        <Icon type={subm.icon} />
+                        {subm.icon}
                         {subm.title}
                       </span>
                     }
@@ -72,13 +72,14 @@ class LayoutContainer extends React.Component {
           </Sider>
           <Layout>
             <Header style={{ background: '#fff', padding: 0 }}>
-              <div className="admin-header-container">
-                <Icon
-                  className="trigger"
-                  style={{ fontSize: '20px' }}
-                  type={collapsed ? 'menu-unfold' : 'menu-fold'}
-                  onClick={this.toggle}
-                />
+              <div className="admin-header-container" onClick={this.toggle}>
+                {!collapsed && (
+                  <MenuFoldOutlined style={{ fontSize: '20px' }} />
+                )}
+
+                {collapsed && (
+                  <MenuUnfoldOutlined style={{ fontSize: '20px' }} />
+                )}
               </div>
             </Header>
             <Content

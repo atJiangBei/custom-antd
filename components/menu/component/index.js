@@ -1,11 +1,11 @@
 import React from 'react'
 import Menu from 'antd/es/menu'
-import { customExtend } from 'components/utils'
+import { customExtendFunComponent } from 'components/utils'
 
 function CustomMenu(props = {}) {
   return <Menu {...props}></Menu>
 }
 
-customExtend(CustomMenu, Menu)
+customExtendFunComponent(CustomMenu, Menu)
 
 export default CustomMenu

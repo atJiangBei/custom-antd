@@ -3,35 +3,71 @@ import Icon from 'components/icon'
 import 'components/icon/style/less'
 import './index.less'
 
-const iconTypes = [
-  'down',
-  'up',
-  'left',
-  'right',
-  'scan',
-  'search',
-  'tag',
-  'save',
-  'skin',
-  'usb',
-  'block',
-  'border'
+const {
+  AccountBookFilled,
+  AccountBookOutlined,
+  AccountBookTwoTone,
+  AimOutlined,
+  AlertFilled,
+  AlertOutlined,
+  AlertTwoTone,
+  AlibabaOutlined,
+  AlignCenterOutlined,
+  AlignLeftOutlined,
+  AlignRightOutlined,
+  AlipayCircleFilled,
+  AlipayCircleOutlined,
+  AlipayOutlined,
+  AlipaySquareFilled,
+  AliwangwangFilled,
+  AliwangwangOutlined,
+  AliyunOutlined,
+  AmazonCircleFilled,
+  AmazonOutlined,
+  AmazonSquareFilled,
+  AndroidFilled,
+  AndroidOutlined,
+  AntCloudOutlined
+} = Icon
+const icons = [
+  'AccountBookFilled',
+  'AccountBookOutlined',
+  'AccountBookTwoTone',
+  'AimOutlined',
+  'AlertFilled',
+  'AlertOutlined',
+  'AlertTwoTone',
+  'AlibabaOutlined',
+  'AlignCenterOutlined',
+  'AlignLeftOutlined',
+  'AlignRightOutlined',
+  'AlipayCircleFilled',
+  'AlipayCircleOutlined',
+  'AlipayOutlined',
+  'AlipaySquareFilled',
+  'AliwangwangFilled',
+  'AliwangwangOutlined',
+  'AliyunOutlined',
+  'AmazonCircleFilled',
+  'AmazonOutlined',
+  'AmazonSquareFilled',
+  'AndroidFilled',
+  'AndroidOutlined',
+  'AntCloudOutlined'
 ]
-const DemoIcon = () => {
-  return (
-    <div>
-      {iconTypes.map(type => {
-        return (
-          <div
-            className="margin-b1 margin-r1 inline-block padding-all"
-            key={type}
-          >
-            <Icon type={type} style={{ fontSize: '24px' }}></Icon>
-          </div>
-        )
-      })}
-    </div>
-  )
+class DemoIcon extends React.Component {
+  render() {
+    return (
+      <>
+        {icons.map(icon => {
+          return React.createElement(Icon[icon], {
+            key: icon,
+            style: { fontSize: '24px', color: '#08c', marginRight: '10px' }
+          })
+        })}
+      </>
+    )
+  }
 }
 
 DemoIcon.tag = {

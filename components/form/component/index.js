@@ -1,11 +1,11 @@
 import React from 'react'
 import Form from 'antd/es/form'
-import { customExtend } from 'components/utils'
+import { customExtendFunComponent } from 'components/utils'
 
 function CustomForm(props = {}) {
   return <Form {...props}></Form>
 }
 
-customExtend(CustomForm, Form)
+customExtendFunComponent(CustomForm, Form)
 
 export default CustomForm

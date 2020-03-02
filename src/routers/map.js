@@ -1,44 +1,54 @@
+import React from 'react'
+import {
+  HomeOutlined,
+  LayoutOutlined,
+  CrownOutlined,
+  FolderOutlined,
+  FileDoneOutlined,
+  SoundOutlined,
+  MoreOutlined
+} from '@ant-design/icons'
 const sliderList = [
   {
     title: '通用',
-    icon: 'home',
+    icon: <HomeOutlined />,
     tag: 'basic',
     children: []
   },
   {
     title: '布局',
-    icon: 'layout',
+    icon: <LayoutOutlined />,
     tag: 'layout',
     children: []
   },
   {
     title: '导航',
-    icon: 'crown',
+    icon: <CrownOutlined />,
     tag: 'nav',
     children: []
   },
   {
     title: '数据录入',
     tag: 'writeFile',
-    icon: 'folder',
+    icon: <FolderOutlined />,
     children: []
   },
   {
     title: '数据展示',
     tag: 'fileShow',
-    icon: 'file',
+    icon: <FileDoneOutlined />,
     children: []
   },
   {
     title: '反馈',
     tag: 'notify',
-    icon: 'sound',
+    icon: <SoundOutlined />,
     children: []
   },
   {
     title: '其他',
     tag: 'other',
-    icon: 'more',
+    icon: <MoreOutlined />,
     children: []
   }
 ]
@@ -72,7 +82,7 @@ const str = [
   '       k   k               y                 z',
   '       k    k              y                zzzzzzzzz',
   '                                                      ',
-  '                Antd@3.26                             '
+  '                Antd@4.x                             '
 ].join('\n')
 
 console.log(`%c ${str}`, 'color:#1590FF')

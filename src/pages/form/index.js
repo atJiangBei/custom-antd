@@ -6,8 +6,21 @@ import Checkbox from 'components/checkbox'
 import 'components/checkbox/style/less'
 import Input from 'components/input'
 import 'components/input/style/less'
-import Icon from 'components/icon'
 
+const layout = {
+  labelCol: { span: 8 },
+  wrapperCol: { span: 16 }
+}
+const tailLayout = {
+  wrapperCol: { offset: 8, span: 16 }
+}
+const onFinish = values => {
+  console.log('Success:', values)
+}
+
+const onFinishFailed = errorInfo => {
+  console.log('Failed:', errorInfo)
+}
 class DemoForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
@@ -19,31 +32,50 @@ class DemoForm extends React.Component {
   }
 
   render() {
-    const { getFieldDecorator } = this.props.form
     return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
-        <Form.Item>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }]
-          })(
-            <Input
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              type="password"
-              placeholder="Password"
-            />
-          )}
-        </Form.Item>
-      </Form>
+      <>
+        <Form
+          {...layout}
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+        >
+          <Form.Item
+            label="Username"
+            name="username"
+            rules={[{ required: true, message: 'Please input your username!' }]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[{ required: true, message: 'Please input your password!' }]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+
+          <Form.Item {...tailLayout}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </>
     )
   }
 }
 
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(DemoForm)
-
-WrappedNormalLoginForm.tag = {
+DemoForm.tag = {
   tag: 'writeFile',
   path: '/form',
   label: 'Form 表单'
 }
 
-export default WrappedNormalLoginForm
+export default DemoForm

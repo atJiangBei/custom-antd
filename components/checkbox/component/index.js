@@ -1,14 +1,17 @@
 import React from 'react'
 import Checkbox from 'antd/es/checkbox'
-import { customExtend } from 'components/utils'
+import { customExtendClassComponent } from 'components/utils'
 
-const CustomInput = (props = {}) => {
-  return (
-    <>
-      <Checkbox {...props}></Checkbox>
-    </>
-  )
+class CustomCheckbox extends React.Component {
+  render() {
+    const props = this.props
+    return (
+      <>
+        <Checkbox {...props}></Checkbox>
+      </>
+    )
+  }
 }
-customExtend(CustomInput, Checkbox)
 
-export default CustomInput
+customExtendClassComponent(CustomCheckbox, Checkbox)
+export default CustomCheckbox

@@ -1,8 +1,9 @@
 import React from 'react'
 import Input from 'antd/es/input'
-
+import { customExtendClassComponent } from 'components/utils'
 class CustomInput extends React.Component {
   render() {
+    const props = this.props
     return (
       <>
         <Input></Input>
@@ -11,8 +12,5 @@ class CustomInput extends React.Component {
   }
 }
 
-const proto = Object.create(Input)
-for (let k in proto) {
-  CustomInput[k] = proto[k]
-}
+customExtendClassComponent(CustomInput, Input)
 export default CustomInput
