@@ -15,7 +15,7 @@ const DemoButton = () => {
         <Button type="link">Link</Button>
       </div>
       <div>
-        <Button type="primary" shape="circle" icon="search" />
+        <Button type="primary" shape="circle" icon={<SearchOutlined />} />
         <Button type="primary" shape="circle">
           A
         </Button>
@@ -26,7 +26,7 @@ const DemoButton = () => {
         <Button icon={<SearchOutlined />}>Search</Button>
         <br />
         <Button shape="circle" icon={<SearchOutlined />} />
-        <Button icon="search">Search</Button>
+        <Button icon={<SearchOutlined />}>Search</Button>
         <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
         <Button type="dashed" icon={<SearchOutlined />}>
           Search
