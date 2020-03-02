@@ -1,6 +1,6 @@
 import React from 'react'
 import DatePicker from 'antd/es/date-picker'
-
+import { customExtendClassComponent } from 'components/utils'
 class CustomDatePicker extends React.Component {
   render() {
     return (
@@ -10,8 +10,6 @@ class CustomDatePicker extends React.Component {
     )
   }
 }
-const proto = Object.create(DatePicker)
-for (let k in proto) {
-  CustomDatePicker[k] = proto[k]
-}
+
+customExtendClassComponent(CustomDatePicker, DatePicker)
 export default CustomDatePicker
